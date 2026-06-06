@@ -11,5 +11,5 @@ service:
   targetPort: 5000
 
 application:
-  version: v1
+  version: v2
   color: blue
