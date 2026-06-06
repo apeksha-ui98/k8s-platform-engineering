@@ -31,6 +31,18 @@ A hands-on Platform Engineering project demonstrating:
 - [ ] Terraform
 - [ ] AWS EKS
 
-## Architecture
+## Phase 1 - Foundation
 
-Coming soon...
+- Dockerized Python Flask application
+- Built custom Docker image
+- Local container validation
+- Kubernetes Deployment (2 replicas)
+- Kubernetes Service (NodePort)
+- Minikube cluster deployment
+
+## Phase 2 - Helm
+
+- Created Helm chart
+- Parameterized deployments with values.yaml
+- Installed application using Helm releases
+- Managed application lifecycle through Helm
