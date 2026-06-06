@@ -1,13 +1,17 @@
-name: CI
+name: CI-CD
 
 on:
   push:
     branches:
-      - master
       - main
+      - master
+
+env:
+  AWS_REGION: ap-south-1
+  ECR_REPOSITORY: k8s-platform-app
 
 jobs:
-  build:
+  build-and-push:
 
     runs-on: ubuntu-latest
 
@@ -19,13 +23,42 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install Dependencies
         run: |
           cd app
           pip install -r requirements.txt
 
-      - name: Docker Build
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build Docker Image
         run: |
-          docker build -t platform-app:test ./app
+          docker build -t platform-app:${{ github.sha }} ./app
+
+      - name: Tag Docker Image
+        run: |
+          docker tag platform-app:${{ github.sha }} \
+          515206814398.dkr.ecr.ap-south-1.amazonaws.com/k8s-platform-app:${{ github.sha }}
+
+      - name: Push Docker Image
+        run: |
+          docker push \
+          515206814398.dkr.ecr.ap-south-1.amazonaws.com/k8s-platform-app:${{ github.sha }}
+
+      - name: Push Latest Tag
+        run: |
+          docker tag platform-app:${{ github.sha }} \
+          515206814398.dkr.ecr.ap-south-1.amazonaws.com/k8s-platform-app:latest
+
+          docker push \
+          515206814398.dkr.ecr.ap-south-1.amazonaws.com/k8s-platform-app:latest
