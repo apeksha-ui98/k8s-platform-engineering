@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}
+
 spec:
   replicas: {{ .Values.replicaCount }}
 
@@ -23,6 +24,14 @@ spec:
 
         ports:
         - containerPort: {{ .Values.service.targetPort }}
+
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
+          limits:
+            cpu: "200m"
+            memory: "128Mi"
 
         env:
         - name: APP_VERSION
