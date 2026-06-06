@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: platform-app
+  labels:
+    app: platform-app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: platform-app
+
+  template:
+    metadata:
+      labels:
+        app: platform-app
+
+    spec:
+      containers:
+      - name: platform-app
+        image: platform-app:v1
+        imagePullPolicy: Never
+
+        ports:
+        - containerPort: 5000
+
+        env:
+        - name: APP_VERSION
+          value: "v1"
+
+        - name: APP_COLOR
+          value: "blue"
