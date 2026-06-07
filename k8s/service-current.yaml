@@ -1,0 +1,32 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: platform-app:/Service:default/platform-app
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"argocd.argoproj.io/tracking-id":"platform-app:/Service:default/platform-app"},"name":"platform-app","namespace":"default"},"spec":{"ports":[{"port":80,"targetPort":5000}],"selector":{"app":"platform-app"},"type":"NodePort"}}
+  creationTimestamp: "2026-06-06T13:22:43Z"
+  name: platform-app
+  namespace: default
+  resourceVersion: "4577"
+  uid: 02c14dee-502e-48e7-a973-0356dc167fa3
+spec:
+  clusterIP: 10.104.82.16
+  clusterIPs:
+  - 10.104.82.16
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30803
+    port: 80
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: platform-app
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
