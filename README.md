@@ -125,16 +125,7 @@ All application secrets (DB passwords, API keys, JWT secrets) live in AWS Secret
 ---
 
 ## 📸 Screenshots
-
-| Component | Screenshot |
-|---|---|
-| GitHub Actions CI — green build | ![CI](https://raw.githubusercontent.com/apeksha-ui98/k8s-platform-engineering/main/docs/screenshots/ci-green.png) |
-| ArgoCD — dev/staging/prod all Synced | ![ArgoCD](https://raw.githubusercontent.com/apeksha-ui98/k8s-platform-engineering/main/docs/screenshots/argocd-multi-env.png) |
-| Argo Rollouts — BlueGreen active + preview | ![Rollouts](https://raw.githubusercontent.com/apeksha-ui98/k8s-platform-engineering/main/docs/screenshots/argo-rollouts-bluegreen.png) |
-| HPA scaling — 2→5 replicas under load | ![HPA](https://raw.githubusercontent.com/apeksha-ui98/k8s-platform-engineering/main/docs/screenshots/hpa-scaling.png) |
-| Grafana — cluster metrics dashboard | ![Grafana](https://raw.githubusercontent.com/apeksha-ui98/k8s-platform-engineering/main/docs/screenshots/grafana-slo.png) |
-| ECR — image with vulnerability scan | ![ECR](https://raw.githubusercontent.com/apeksha-ui98/k8s-platform-engineering/main/docs/screenshots/ecr-vuln-scan.png) |
-| AWS EKS console — 4-node cluster | ![EKS](https://raw.githubusercontent.com/apeksha-ui98/k8s-platform-engineering/main/docs/screenshots/eks-console.png) |
+![ArgoRollouts Diagram](docs/screenshots/argo-rollouts-bluegreen.png)
 
 ## 🚀 How to Run
 
