@@ -123,14 +123,6 @@ All application secrets (DB passwords, API keys, JWT secrets) live in AWS Secret
 - **Karpenter consolidation**: underutilized nodes drained and terminated automatically after 30 seconds.
 
 ---
-
-## 📐 Screenshots
-
-## Argo Rollouts — blue-green services
-<img width="602" height="163" alt="argo-rollouts-bluegreen" src="https://github.com/user-attachments/assets/cea8bf01-0351-4754-b2c1-fe73dee32623" />
-
-
-
 ## 🚀 How to Run
 
 ### Prerequisites
@@ -144,6 +136,36 @@ cd terraform/environments/dev
 terraform init
 terraform apply -auto-approve
 ```
+
+## Screenshots
+
+Argo-Rollouts-BlueGreen:
+
+<img width="602" height="163" alt="argo-rollouts-bluegreen" src="https://github.com/user-attachments/assets/4ddfc6e2-be09-44db-841a-d6372dfb5f1e" />
+
+EKS_Console:
+
+<img width="602" height="211" alt="eks-console" src="https://github.com/user-attachments/assets/9b022d57-bf58-4ce6-92d0-3eca48ce5ba4" />
+
+ECR-Scan:
+
+<img width="602" height="282" alt="ecr-vuln-scan" src="https://github.com/user-attachments/assets/60e3c722-8509-491d-9dbb-1700ec333134" />
+
+Grafana-slo:
+
+<img width="602" height="303" alt="grafana-slo" src="https://github.com/user-attachments/assets/f9381d59-25fa-4c3e-a6d7-6f47ab440377" />
+
+HPA-Scaling:
+
+<img width="602" height="320" alt="hpa-scaling" src="https://github.com/user-attachments/assets/c8f3238c-b4ed-48d6-8d9b-7b2fe993a9f6" />
+
+ArgoCd-Multi-ENV:
+
+<img width="602" height="286" alt="argocd-multi-env" src="https://github.com/user-attachments/assets/4d847005-e78b-4cb9-a24f-18e18d9ceb2a" />
+
+CI-Green:
+
+<img width="602" height="305" alt="ci-green" src="https://github.com/user-attachments/assets/7f26d3c5-53aa-4355-8e5c-e1a5173b3b3d" />
 
 ### 2 — Install ArgoCD
 ```bash
@@ -199,36 +221,6 @@ kubectl port-forward svc/platform-app 5000:5000 -n dev
 - Karpenter consolidation (`consolidateAfter: 30s`) reduces idle node cost by ~60%
 - ECR lifecycle policy retains only last 10 images → minimal storage cost
 - **Always run `terraform destroy` when done** — EKS control plane alone costs ~$0.10/hour
-
----
-
-## 🏆 Resume Bullets
-
-```
-Kubernetes Platform Engineering | EKS · Terraform Modules · ArgoCD · Argo Rollouts · IRSA · Karpenter · HPA · External Secrets · Prometheus · Grafana · GitHub Actions
-github.com/apeksha-ui98/k8s-platform-engineering
-
-• Provisioned multi-environment EKS platform using reusable Terraform modules (vpc, eks, ecr, karpenter)
-  with IRSA for least-privilege pod-level IAM — zero static AWS credentials in cluster
-
-• Implemented automated blue-green deployments with Argo Rollouts and Prometheus AnalysisTemplate —
-  promotion requires 95% success rate over 5 checks; failed analysis triggers automatic rollback
-
-• Built multi-environment GitOps pipeline (dev/staging/prod) using ArgoCD ApplicationSet — Git push
-  auto-deploys to dev, staging and prod require manual promotion in ArgoCD UI
-
-• Deployed External Secrets Operator with AWS Secrets Manager — all secrets pulled at runtime,
-  zero secrets stored in Git or Kubernetes Secret manifests
-
-• Configured SRE-grade observability with 99.5% availability SLO, error budget dashboard in Grafana,
-  and Alertmanager routing prod incidents to dedicated Slack channel with automated breach alerts
-
-• Integrated Karpenter (spot-first) + HPA — cluster scales 2→10 nodes automatically;
-  Karpenter consolidation reduces node cost by up to 60%
-
-• Eliminated static AWS credentials in CI/CD using GitHub Actions OIDC — scoped IAM role allows
-  only this repository to authenticate; images pushed to ECR with vulnerability scanning enabled
-```
 
 ---
 
