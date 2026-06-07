@@ -12,7 +12,8 @@
 
 ## 📐 Architecture
 
-```
+![Architecture Diagram](docs/screenshots/architecture.png)
+
 Developer pushes code to GitHub
          │
          ▼
