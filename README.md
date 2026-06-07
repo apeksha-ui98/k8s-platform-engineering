@@ -139,33 +139,41 @@ terraform apply -auto-approve
 
 ## Screenshots
 
+
 Argo-Rollouts-BlueGreen:
 
 <img width="602" height="163" alt="argo-rollouts-bluegreen" src="https://github.com/user-attachments/assets/4ddfc6e2-be09-44db-841a-d6372dfb5f1e" />
+
 
 EKS_Console:
 
 <img width="602" height="211" alt="eks-console" src="https://github.com/user-attachments/assets/9b022d57-bf58-4ce6-92d0-3eca48ce5ba4" />
 
+
 ECR-Scan:
 
 <img width="602" height="282" alt="ecr-vuln-scan" src="https://github.com/user-attachments/assets/60e3c722-8509-491d-9dbb-1700ec333134" />
+
 
 Grafana-slo:
 
 <img width="602" height="303" alt="grafana-slo" src="https://github.com/user-attachments/assets/f9381d59-25fa-4c3e-a6d7-6f47ab440377" />
 
+
 HPA-Scaling:
 
 <img width="602" height="320" alt="hpa-scaling" src="https://github.com/user-attachments/assets/c8f3238c-b4ed-48d6-8d9b-7b2fe993a9f6" />
+
 
 ArgoCd-Multi-ENV:
 
 <img width="602" height="286" alt="argocd-multi-env" src="https://github.com/user-attachments/assets/4d847005-e78b-4cb9-a24f-18e18d9ceb2a" />
 
+
 CI-Green:
 
 <img width="602" height="305" alt="ci-green" src="https://github.com/user-attachments/assets/7f26d3c5-53aa-4355-8e5c-e1a5173b3b3d" />
+
 
 ### 2 — Install ArgoCD
 ```bash
