@@ -127,24 +127,8 @@ All application secrets (DB passwords, API keys, JWT secrets) live in AWS Secret
 ## 📐 Screenshots
 
 ## Argo Rollouts — blue-green services
+<img width="602" height="163" alt="argo-rollouts-bluegreen" src="https://github.com/user-attachments/assets/cea8bf01-0351-4754-b2c1-fe73dee32623" />
 
-PS D:\k8s-platform-engineering> kubectl get svc
-NAME                                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)
-alertmanager-operated                 ClusterIP   10.96.0.1        <none>        9093/TCP,9094/TCP,9094/UDP
-kubernetes                            ClusterIP   10.96.0.1        <none>        443/TCP
-monitoring-grafana                    ClusterIP   10.100.218.240   <none>        80/TCP
-monitoring-kube-prometheus-alertmgr   ClusterIP   10.98.228.122    <none>        9093/TCP,8080/TCP
-monitoring-kube-prometheus-operator   ClusterIP   10.102.22.186    <none>        443/TCP
-monitoring-kube-state-metrics         ClusterIP   10.101.94.85     <none>        8080/TCP,8080/TCP
-monitoring-prometheus-node-exporter   ClusterIP   10.100.65.36     <none>        9100/TCP
-platform-app                          NodePort    10.104.82.16     <none>        80:30803/TCP
-platform-app-active                   ClusterIP   10.111.123.96    <none>        80:31782/TCP
-platform-app-preview                  ClusterIP   10.100.44.247    <none>        80/TCP
-prometheus-operated                   ClusterIP   None             <none>        9090/TCP
-
-PS D:\k8s-platform-engineering> kubectl get rollout
-NAME           DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-platform-app   2         2                      2           12m
 
 
 ## 🚀 How to Run
