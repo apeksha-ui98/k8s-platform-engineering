@@ -128,13 +128,13 @@ All application secrets (DB passwords, API keys, JWT secrets) live in AWS Secret
 
 | Component | Screenshot |
 |---|---|
-| GitHub Actions CI — green build | ![CI](docs/screenshots/ci-green.png) |
-| ArgoCD — dev/staging/prod all Synced | ![ArgoCD](docs/screenshots/argocd-multi-env.png) |
-| Argo Rollouts — BlueGreen active + preview | ![Rollouts](docs/screenshots/argo-rollouts-bluegreen.png) |
-| HPA scaling — 2→5 replicas under load | ![HPA](docs/screenshots/hpa-scaling.png) |
-| Grafana — cluster metrics dashboard | ![Grafana](docs/screenshots/grafana-slo.png) |
-| ECR — image with vulnerability scan | ![ECR](docs/screenshots/ecr-vuln-scan.png) |
-| AWS EKS console — 4-node cluster | ![EKS](docs/screenshots/eks-console.png) |
+| GitHub Actions CI — green build | ![CI](./docs/screenshots/ci-green.png) |
+| ArgoCD — dev/staging/prod all Synced | ![ArgoCD](./docs/screenshots/argocd-multi-env.png) |
+| Argo Rollouts — BlueGreen active + preview | ![Rollouts](./docs/screenshots/argo-rollouts-bluegreen.png) |
+| HPA scaling — 2→5 replicas under load | ![HPA](./docs/screenshots/hpa-scaling.png) |
+| Grafana — cluster metrics dashboard | ![Grafana](./docs/screenshots/grafana-slo.png) |
+| ECR — image with vulnerability scan | ![ECR](./docs/screenshots/ecr-vuln-scan.png) |
+| AWS EKS console — 4-node cluster | ![EKS](./docs/screenshots/eks-console.png) |
 
 ## 🚀 How to Run
 
