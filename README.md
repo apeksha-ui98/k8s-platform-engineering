@@ -124,8 +124,9 @@ All application secrets (DB passwords, API keys, JWT secrets) live in AWS Secret
 
 ---
 
-## 📸 Screenshots
-![ArgoRollouts Diagram](docs/screenshots/argo-rollouts-bluegreen.png)
+## 📐 Screenshots
+
+![Architecture Diagram](docs/screenshots/argo-rollouts-bluegreen.png)
 
 ## 🚀 How to Run
 
