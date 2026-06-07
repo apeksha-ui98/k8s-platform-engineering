@@ -1,0 +1,29 @@
+﻿apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: platform-app
+  namespace: argocd
+
+spec:
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/replicas
+
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+
+  project: default
+
+  source:
+    repoURL: https://github.com/apeksha-ui98/k8s-platform-engineering.git
+    targetRevision: main
+    path: helm/platform-app
+
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
